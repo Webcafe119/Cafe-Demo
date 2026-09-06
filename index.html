@@ -18,13 +18,13 @@
             padding-bottom: 50px;
         }
 
-        /* 1. 상단 메인 히어로 슬라이드 */
+        /* 1. 상단 메인 히어로 */
         .hero-banner {
             position: relative;
             width: 100%;
-            height: 420px;
+            height: 380px;
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -32,16 +32,17 @@
             color: #ffffff;
             text-align: center;
             padding: 0 20px;
+            animation: fadeIn 1s ease-in-out;
         }
         .hero-banner h1 {
-            font-size: 3.2rem;
-            letter-spacing: 3px;
+            font-size: 3rem;
+            letter-spacing: 2px;
             color: #e2b071;
             text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .hero-banner p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #f0e6d2;
             font-style: italic;
             max-width: 600px;
@@ -54,34 +55,41 @@
             background-color: #2c1d11;
             display: flex;
             justify-content: center;
-            gap: 12px;
-            padding: 14px 15px;
+            gap: 10px;
+            padding: 12px 15px;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             overflow-x: auto;
         }
         nav button {
             background: transparent;
             border: 1px solid #7a5c43;
             color: #e8d8c8;
-            padding: 9px 22px;
+            padding: 8px 20px;
             border-radius: 25px;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             white-space: nowrap;
         }
-        nav button:hover, nav button.active {
+        nav button:hover {
+            background-color: rgba(226, 176, 113, 0.2);
+            border-color: #e2b071;
+            transform: translateY(-2px);
+        }
+        nav button.active {
             background-color: #e2b071;
             color: #2c1d11;
             border-color: #e2b071;
+            transform: scale(1.03);
+            box-shadow: 0 4px 10px rgba(226, 176, 113, 0.3);
         }
 
-        /* 3. 본문 컨테이너 및 모션 애니메이션 */
+        /* 3. 컨테이너 & 탭 모션 애니메이션 */
         .container {
             max-width: 750px;
-            margin: 30px auto;
+            margin: 25px auto;
             padding: 0 15px;
         }
 
@@ -93,7 +101,7 @@
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             border: 1px solid #e8decb;
             opacity: 0;
-            transform: translateY(15px);
+            transform: translateY(18px);
             transition: opacity 0.4s ease, transform 0.4s ease;
         }
         .tab-content.active {
@@ -103,7 +111,7 @@
         }
 
         .section-title {
-            font-size: 1.6rem;
+            font-size: 1.5rem;
             color: #4a3222;
             border-bottom: 2px solid #e2b071;
             padding-bottom: 8px;
@@ -113,16 +121,15 @@
             gap: 10px;
         }
 
-        /* 서브 카테고리 */
         .sub-category-title {
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: #b86b20;
             margin: 25px 0 14px 0;
             padding-left: 10px;
             border-left: 4px solid #e2b071;
         }
 
-        /* 메뉴 리스트 카드 & 베스트 태그 */
+        /* 4. 메뉴 카드 모션 & 디자인 */
         .menu-grid {
             display: flex;
             flex-direction: column;
@@ -136,7 +143,12 @@
             padding: 12px 14px;
             border: 1px solid #eee4d5;
             align-items: center;
-            position: relative;
+            transition: all 0.3s ease;
+        }
+        .menu-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            border-color: #e2b071;
         }
         .menu-thumb {
             width: 75px;
@@ -144,6 +156,10 @@
             border-radius: 10px;
             object-fit: cover;
             flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+        .menu-card:hover .menu-thumb {
+            transform: scale(1.05);
         }
         .menu-info {
             flex-grow: 1;
@@ -188,25 +204,26 @@
             color: #6e5e52;
         }
 
-        /* 대형 About Us 및 내장 갤러리 */
+        /* 5. About Us & 갤러리 */
         .about-hero-img {
             width: 100%;
-            height: 260px;
+            height: 250px;
             border-radius: 12px;
             object-fit: cover;
             margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .about-text-long {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: #332720;
-            line-height: 1.85;
+            line-height: 1.8;
             margin-bottom: 16px;
         }
         .about-gallery {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            margin: 25px 0 15px 0;
+            margin: 22px 0;
         }
         .about-gallery-item {
             height: 140px;
@@ -217,9 +234,13 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+        .about-gallery-item:hover img {
+            transform: scale(1.08);
         }
 
-        /* 편의시설 Grid */
+        /* 6. 편의시설 (Wi-Fi 제거됨) */
         .facility-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -229,7 +250,7 @@
         .facility-card {
             background: #faf6f0;
             border: 1px solid #eee4d5;
-            padding: 12px;
+            padding: 12px 14px;
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -237,28 +258,33 @@
             font-size: 0.9rem;
             font-weight: 600;
             color: #4a3222;
+            transition: background-color 0.2s ease;
+        }
+        .facility-card:hover {
+            background-color: #f3ebd9;
         }
 
-        /* 소셜 미디어 버튼 */
-        .social-links {
-            display: flex;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .btn-social {
-            flex: 1;
+        /* 7. 소셜 미디어 (인스타그램 전용) */
+        .btn-social-ig {
+            display: block;
+            width: 100%;
             text-align: center;
-            padding: 10px;
-            border-radius: 8px;
+            padding: 12px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #fff;
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            margin-top: 12px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        .btn-ig { background-color: #e1306c; }
-        .btn-tiktok { background-color: #000000; }
+        .btn-social-ig:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(225, 48, 108, 0.3);
+        }
 
-        /* 예약 양식 */
+        /* 8. 예약 양식 & 액션 버튼 */
         .form-group {
             margin-bottom: 16px;
         }
@@ -276,6 +302,11 @@
             border-radius: 8px;
             font-size: 0.95rem;
             background: #fdfbf7;
+            transition: border-color 0.2s ease;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #e2b071;
         }
 
         .btn-action {
@@ -292,6 +323,15 @@
             border: none;
             cursor: pointer;
             font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+        .btn-action:hover {
+            background-color: #d89f5c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(226, 176, 113, 0.4);
+        }
+        .btn-action:active {
+            transform: translateY(0);
         }
 
         footer {
@@ -300,11 +340,16 @@
             font-size: 0.8rem;
             color: #8c7b6c;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
 
-    <!-- 메인 히어로 슬라이드 -->
+    <!-- 메인 히어로 -->
     <header class="hero-banner">
         <h1>Kopi Senja</h1>
         <p>Nikmati Kopi Otentik & Suasana Nyaman di Jakarta Selatan</p>
@@ -320,15 +365,15 @@
 
     <div class="container">
 
-        <!-- 1. MENU (인기 메뉴 태그 추가) -->
+        <!-- 1. MENU -->
         <div id="menu" class="tab-content active">
-            <h2 class="section-title">☕ Daftar Menu Complete</h2>
+            <h2 class="section-title">☕ Daftar Menu</h2>
 
             <!-- 음료 -->
             <h3 class="sub-category-title">🥤 Minuman (Beverages)</h3>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=200&q=80" alt="Es Kopi Senja">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=300&q=80" alt="Es Kopi Senja">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Es Kopi Senja <span class="badge-best">BEST</span></span>
@@ -338,7 +383,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=200&q=80" alt="Pandan Velvet Latte">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=300&q=80" alt="Pandan Velvet Latte">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Pandan Velvet Latte <span class="badge-chef">RECOMMENDED</span></span>
@@ -348,7 +393,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=200&q=80" alt="Americano Hot/Ice">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=300&q=80" alt="Americano Hot/Ice">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Americano (Hot / Ice)</span>
@@ -358,7 +403,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=200&q=80" alt="Matcha Green Tea">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&w=300&q=80" alt="Matcha Green Tea">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Matcha Green Tea Latte</span>
@@ -373,7 +418,7 @@
             <h3 class="sub-category-title">🍳 Makanan Utama (Main Course)</h3>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80" alt="Nasi Goreng Senja">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=300&q=80" alt="Nasi Goreng Senja">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Nasi Goreng Senja <span class="badge-best">BEST</span></span>
@@ -383,7 +428,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=200&q=80" alt="Beef Croissant Sandwich">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=300&q=80" alt="Beef Croissant Sandwich">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Beef Croissant Sandwich</span>
@@ -393,7 +438,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?auto=format&fit=crop&w=200&q=80" alt="Spaghetti Bolognese">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=300&q=80" alt="Spaghetti Bolognese">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Spaghetti Bolognese</span>
@@ -408,7 +453,7 @@
             <h3 class="sub-category-title">🍰 Dessert & Pastry</h3>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=200&q=80" alt="Fudgy Brownies">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=300&q=80" alt="Fudgy Brownies">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Fudgy Chocolate Brownies</span>
@@ -418,7 +463,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=200&q=80" alt="Croissant Butter">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=300&q=80" alt="Croissant Butter">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">French Butter Croissant</span>
@@ -428,7 +473,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?auto=format&fit=crop&w=200&q=80" alt="Cheesecake">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=300&q=80" alt="Cheesecake">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Basque Burnt Cheesecake <span class="badge-chef">RECOMMENDED</span></span>
@@ -444,7 +489,7 @@
         <div id="about" class="tab-content">
             <h2 class="section-title">📖 Tentang Kopi Senja</h2>
             
-            <img class="about-hero-img" src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Roasting Beans">
+            <img class="about-hero-img" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=800&q=80" alt="Roasting Coffee">
             
             <p class="about-text-long">
                 <strong>Selamat Datang di Kopi Senja!</strong><br>
@@ -455,9 +500,9 @@
             </p>
 
             <div class="about-gallery">
-                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=400&q=80" alt="Manual Brew"></div>
+                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Manual Brew"></div>
                 <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80" alt="Outdoor Area"></div>
-                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Latte Art"></div>
+                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80" alt="Cozy Interior"></div>
                 <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=400&q=80" alt="Cozy Corner"></div>
             </div>
 
@@ -501,17 +546,16 @@
             </form>
         </div>
 
-        <!-- 4. LOKASI, 편의시설 & 소셜 미디어 -->
+        <!-- 4. LOKASI & 편의시설 -->
         <div id="lokasi" class="tab-content">
             <h2 class="section-title">📍 Lokasi & Informasi</h2>
-            <p style="margin-bottom: 10px;"><strong>Jam Operasional:</strong> Senin - Minggu (08:00 - 22:00 WIB)</p>
+            <p style="margin-bottom: 8px;"><strong>Jam Operasional:</strong> Senin - Minggu (08:00 - 22:00 WIB)</p>
             <p style="margin-bottom: 15px;"><strong>Alamat:</strong> Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan</p>
             <button class="btn-action" style="margin-top:0;" onclick="window.open('https://maps.google.com')">🗺️ Buka di Google Maps</button>
 
-            <!-- 편의시설 아이콘 안내 -->
+            <!-- 편의시설 아이콘 (와이파이 제거 완료) -->
             <h3 class="sub-category-title">✨ Fasilitas Kafe</h3>
             <div class="facility-grid">
-                <div class="facility-card">📶 Wi-Fi Cepat (100Mbps)</div>
                 <div class="facility-card">🔌 Stopkontak Banyak</div>
                 <div class="facility-card">🅿️ Area Parkir Luas</div>
                 <div class="facility-card">🐾 Pet-Friendly Area</div>
@@ -519,12 +563,9 @@
                 <div class="facility-card">🚬 Smoking Area Outdoor</div>
             </div>
 
-            <!-- 소셜 미디어 연동 -->
+            <!-- 소셜 미디어 (인스타그램 전용) -->
             <h3 class="sub-category-title">📱 Ikuti Kami</h3>
-            <div class="social-links">
-                <a href="https://instagram.com" target="_blank" class="btn-social btn-ig">📸 Instagram</a>
-                <a href="https://tiktok.com" target="_blank" class="btn-social btn-tiktok">🎵 TikTok</a>
-            </div>
+            <a href="https://instagram.com" target="_blank" class="btn-social-ig">📸 Follow Us on Instagram</a>
         </div>
 
     </div>
@@ -568,7 +609,6 @@
                             `• *Jumlah Orang:* ${jumlah}\n` +
                             `• *Catatan:* ${catatan}`;
 
-            // wa.me 링크를 이용해 바로 이동 (팝업 차단 문제 완벽 해결)
             const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
             window.location.href = waUrl;
         }
