@@ -12,54 +12,64 @@
             font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
         }
         body {
-            background-color: #f4efe6;
-            color: #332720;
+            background-color: #f9f6f0;
+            color: #2c1d11;
             line-height: 1.6;
-            padding-bottom: 30px;
-        }
-        /* Header Banner */
-        header {
-            background: linear-gradient(135deg, #2c1d11 0%, #4a3222 100%);
-            color: #f8f1e5;
-            text-align: center;
-            padding: 3rem 1.5rem 2rem 1.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        }
-        header h1 {
-            font-size: 2.2rem;
-            letter-spacing: 2px;
-            color: #e2b071;
-            margin-bottom: 0.3rem;
-        }
-        header p {
-            font-size: 0.95rem;
-            color: #d1c2b5;
-            font-style: italic;
+            padding-bottom: 50px;
         }
 
-        /* Navigation Bar (Tabs) */
+        /* 1. 상단 메인 카페 비주얼 히어로 섹션 */
+        .hero-banner {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .hero-banner h1 {
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            color: #e2b071;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            margin-bottom: 8px;
+        }
+        .hero-banner p {
+            font-size: 1.1rem;
+            color: #f0e6d2;
+            font-style: italic;
+            max-width: 500px;
+        }
+
+        /* 2. 고정 탭 메뉴 */
         nav {
             position: sticky;
             top: 0;
-            background-color: #3d291a;
+            background-color: #2c1d11;
             display: flex;
             justify-content: center;
-            gap: 8px;
-            padding: 10px 15px;
+            gap: 10px;
+            padding: 12px 15px;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
             overflow-x: auto;
         }
         nav button {
             background: transparent;
             border: 1px solid #7a5c43;
             color: #e8d8c8;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.25s ease;
+            transition: all 0.3s ease;
             white-space: nowrap;
         }
         nav button:hover, nav button.active {
@@ -68,79 +78,71 @@
             border-color: #e2b071;
         }
 
-        /* Main Container */
+        /* 3. 컨테이너 & 애니메이션 모션 */
         .container {
-            max-width: 650px;
-            margin: 20px auto;
+            max-width: 700px;
+            margin: 25px auto;
             padding: 0 15px;
+            position: relative;
         }
 
-        /* Category Section Cards */
         .tab-content {
             display: none;
             background: #ffffff;
             border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            padding: 25px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             border: 1px solid #e8decb;
-            animation: fadeIn 0.3s ease-in-out;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
         .tab-content.active {
             display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
+            opacity: 1;
+            transform: translateY(0);
         }
 
         .section-title {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             color: #4a3222;
             border-bottom: 2px solid #e2b071;
             padding-bottom: 8px;
-            margin-bottom: 18px;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
-        /* Hero Image Container */
-        .hero-img-box {
-            width: 100%;
-            height: 180px;
-            border-radius: 12px;
-            overflow: hidden;
-            margin-bottom: 18px;
-            background-color: #e2d7c5;
-        }
-        .hero-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        /* 서브 카테고리 (Minuman / Makanan / Dessert) */
+        .sub-category-title {
+            font-size: 1.15rem;
+            color: #b86b20;
+            margin: 20px 0 12px 0;
+            padding-left: 8px;
+            border-left: 4px solid #e2b071;
         }
 
-        /* Menu Grid / Items */
+        /* 메뉴 리스트 카드 */
         .menu-grid {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 12px;
         }
         .menu-card {
             display: flex;
             gap: 12px;
             background: #faf6f0;
-            border-radius: 10px;
-            padding: 10px;
+            border-radius: 12px;
+            padding: 12px;
             border: 1px solid #eee4d5;
             align-items: center;
         }
         .menu-thumb {
-            width: 75px;
-            height: 75px;
+            width: 70px;
+            height: 70px;
             border-radius: 8px;
             object-fit: cover;
-            background-color: #ddd;
             flex-shrink: 0;
         }
         .menu-info {
@@ -154,7 +156,7 @@
         }
         .menu-name {
             font-weight: bold;
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: #2c1d11;
         }
         .menu-price {
@@ -165,99 +167,115 @@
         .menu-desc {
             font-size: 0.82rem;
             color: #6e5e52;
-            line-height: 1.3;
         }
 
-        /* Info List */
-        .info-group {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
+        /* 대형 About Us 스타일 */
+        .about-hero {
+            position: relative;
+            height: 220px;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 20px;
         }
-        .info-item {
-            display: flex;
+        .about-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-text-big {
+            font-size: 1.05rem;
+            color: #332720;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .about-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
-            align-items: flex-start;
+            margin-top: 20px;
+        }
+        .feature-box {
             background: #faf6f0;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #eee4d5;
+        }
+        .feature-box h4 {
+            color: #b86b20;
+            margin-bottom: 5px;
+        }
+        .feature-box p {
+            font-size: 0.82rem;
+            color: #666;
+        }
+
+        /* 4. 예약 (Reservasi) 양식 */
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a3222;
+            margin-bottom: 5px;
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #dcd1c4;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            background: #fdfbf7;
+        }
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: #e2b071;
+            background: #ffffff;
+        }
+
+        /* 버튼 및 푸터 */
+        .btn-action {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #e2b071;
+            color: #2c1d11;
             padding: 12px;
             border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s ease;
         }
-        .info-icon {
-            font-size: 1.2rem;
-            background: #e2b071;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            flex-shrink: 0;
-            color: #2c1d11;
-        }
-        .info-text h4 {
-            font-size: 0.95rem;
-            color: #4a3222;
-            margin-bottom: 2px;
-        }
-        .info-text p {
-            font-size: 0.88rem;
-            color: #55483d;
+        .btn-action:hover {
+            background-color: #d19f60;
         }
 
-        /* Photo Gallery Grid */
+        /* 갤러리 그리드 */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
         .gallery-item {
-            position: relative;
+            height: 130px;
             border-radius: 10px;
             overflow: hidden;
-            height: 120px;
         }
         .gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .gallery-item span {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0,0,0,0.6);
-            color: #fff;
-            font-size: 0.75rem;
-            padding: 4px 8px;
-            text-align: center;
-        }
-
-        /* Buttons & Footer */
-        .btn-action {
-            display: block;
-            width: 100%;
-            text-align: center;
-            background-color: #25d366;
-            color: #ffffff;
-            padding: 12px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.2);
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-        .btn-ig {
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            box-shadow: 0 4px 10px rgba(220, 39, 67, 0.2);
-        }
 
         footer {
             text-align: center;
-            padding: 20px 10px 0 10px;
+            padding: 30px 10px 0 10px;
             font-size: 0.8rem;
             color: #8c7b6c;
         }
@@ -265,28 +283,29 @@
 </head>
 <body>
 
-    <header>
+    <!-- 상단 대형 카페 메인 비주얼 -->
+    <header class="hero-banner">
         <h1>Kopi Senja</h1>
         <p>Nikmati Kopi Otentik & Suasana Nyaman di Jakarta Selatan</p>
     </header>
 
-    <!-- Navigation Bar (Kategori Atas) -->
+    <!-- 카테고리 탭 (상단 고정) -->
     <nav>
-        <button class="nav-btn active" onclick="openTab('menu')">☕ Menu</button>
-        <button class="nav-btn" onclick="openTab('lokasi')">📍 Lokasi</button>
-        <button class="nav-btn" onclick="openTab('galeri')">📸 Galeri</button>
-        <button class="nav-btn" onclick="openTab('tentang')">✨ Tentang Kami</button>
+        <button class="nav-btn active" onclick="openTab('menu', this)">☕ Menu</button>
+        <button class="nav-btn" onclick="openTab('about', this)">📖 About Us</button>
+        <button class="nav-btn" onclick="openTab('reservasi', this)">📅 Reservasi</button>
+        <button class="nav-btn" onclick="openTab('lokasi', this)">📍 Lokasi</button>
+        <button class="nav-btn" onclick="openTab('galeri', this)">📸 Galeri</button>
     </nav>
 
     <div class="container">
 
-        <!-- TAB 1: MENU -->
+        <!-- 1. MENU (Minuman, Makanan, Dessert) -->
         <div id="menu" class="tab-content active">
-            <h2 class="section-title"> Menu Favorit</h2>
-            <div class="hero-img-box">
-                <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=600&q=80" alt="Cafe Interior">
-            </div>
-            
+            <h2 class="section-title">☕ Daftar Menu</h2>
+
+            <!-- 음료 (Minuman) -->
+            <h3 class="sub-category-title">🥤 Minuman (Beverages)</h3>
             <div class="menu-grid">
                 <div class="menu-card">
                     <img class="menu-thumb" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=200&q=80" alt="Es Kopi Senja">
@@ -298,7 +317,6 @@
                         <p class="menu-desc">Espresso khas, susu segar, dan gula aren asli yang manis gurih.</p>
                     </div>
                 </div>
-
                 <div class="menu-card">
                     <img class="menu-thumb" src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=200&q=80" alt="Pandan Latte">
                     <div class="menu-info">
@@ -309,18 +327,36 @@
                         <p class="menu-desc">Perpaduan aroma pandan wangi, espresso, dan foam lembut.</p>
                     </div>
                 </div>
+            </div>
 
+            <!-- 음식 (Makanan Utama) -->
+            <h3 class="sub-category-title">🍳 Makanan Utama (Main Course)</h3>
+            <div class="menu-grid">
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=200&q=80" alt="Croissant Butter">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80" alt="Nasi Goreng">
                     <div class="menu-info">
                         <div class="menu-header">
-                            <span class="menu-name">Butter Croissant</span>
-                            <span class="menu-price">Rp 18.000</span>
+                            <span class="menu-name">Nasi Goreng Senja</span>
+                            <span class="menu-price">Rp 35.000</span>
                         </div>
-                        <p class="menu-desc">Roti renyah beraroma mentega Prancis, cocok untuk teman kopi.</p>
+                        <p class="menu-desc">Nasi goreng rempah khas dengan telur mata sapi dan kerupuk.</p>
                     </div>
                 </div>
+                <div class="menu-card">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=200&q=80" alt="Croissant Sandwich">
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <span class="menu-name">Beef Croissant Sandwich</span>
+                            <span class="menu-price">Rp 38.000</span>
+                        </div>
+                        <p class="menu-desc">Croissant renyah dengan isian danging sapi, keju, dan sayuran segar.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- 디저트 (Dessert) -->
+            <h3 class="sub-category-title">🍰 Dessert & Pastry</h3>
+            <div class="menu-grid">
                 <div class="menu-card">
                     <img class="menu-thumb" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=200&q=80" alt="Fudgy Brownie">
                     <div class="menu-info">
@@ -328,89 +364,89 @@
                             <span class="menu-name">Fudgy Brownies</span>
                             <span class="menu-price">Rp 20.000</span>
                         </div>
-                        <p class="menu-desc">Kue cokelat cokelat lumer tebal dengan taburan kacang almond.</p>
+                        <p class="menu-desc">Kue cokelat lumer tebal dengan taburan kacang almond.</p>
                     </div>
                 </div>
             </div>
-
-            <button class="btn-action" onclick="alert('Pesanan dikirim via WhatsApp!')">💬 Pesan via WhatsApp</button>
         </div>
 
-        <!-- TAB 2: LOKASI & JAM OPERASIONAL -->
+        <!-- 2. ABOUT US (대형 소개) -->
+        <div id="about" class="tab-content">
+            <h2 class="section-title">📖 Tentang Kopi Senja</h2>
+            <div class="about-hero">
+                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Roasting Beans">
+            </div>
+            <p class="about-text-big">
+                <strong>Selamat Datang di Kopi Senja!</strong><br>
+                Kami berdiri sejak tahun 2022 di jantung kota Jakarta Selatan. Berawal dari kecintaan kami terhadap cita rasa kopi Nusantara, Kopi Senja hadir sebagai tempat berkumpul yang hangat bagi para pecinta kopi, pekerja kreatif, dan keluarga.
+            </p>
+            <p class="about-text-big">
+                Setiap biji kopi kami dipilih langsung dari petani lokal di Aceh Gayo 및 Toraja, lalu disangrai (roast) secara mandiri setiap minggu untuk menjamin kualitas kesegaran terbaik di setiap cangkir.
+            </p>
+            <div class="about-features">
+                <div class="feature-box">
+                    <h4>🌱 100% Kopi Lokal</h4>
+                    <p>Biji kopi pilihan langsung dari petani Indonesia.</p>
+                </div>
+                <div class="feature-box">
+                    <h4>💻 Work Friendly</h4>
+                    <p>Wi-Fi cepat & stopkontak di setiap sudut meja.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. RESERVASI (예약 양식) -->
+        <div id="reservasi" class="tab-content">
+            <h2 class="section-title">📅 Reservasi Meja</h2>
+            <p style="font-size: 0.88rem; color: #666; margin-bottom: 15px;">Pesan meja Anda terlebih dahulu untuk acara santai, rapat, atau kumpul keluarga.</p>
+
+            <form onsubmit="handleReservation(event)">
+                <div class="form-group">
+                    <label>Nama Lengkap (이름)</label>
+                    <input type="text" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Nomor WhatsApp (전화번호)</label>
+                    <input type="tel" placeholder="0812xxxxxxx" required>
+                </div>
+                <div class="form-group">
+                    <label>Tanggal & Jam (날짜 및 시간)</label>
+                    <input type="datetime-local" required>
+                </div>
+                <div class="form-group">
+                    <label>Jumlah Orang (인원수)</label>
+                    <select required>
+                        <option value="1">1 Orang</option>
+                        <option value="2">2 Orang</option>
+                        <option value="3-4">3 - 4 Orang</option>
+                        <option value="5+">Lebih dari 5 Orang</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Catatan Khusus (요청사항)</label>
+                    <textarea rows="3" placeholder="Pesan khusus (misal: area outdoor, ulang tahun, dll)"></textarea>
+                </div>
+                <button type="submit" class="btn-action">Kirim Reservasi via WhatsApp</button>
+            </form>
+        </div>
+
+        <!-- 4. LOKASI -->
         <div id="lokasi" class="tab-content">
             <h2 class="section-title">📍 Lokasi & Jam Buka</h2>
-            <div class="hero-img-box">
-                <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=600&q=80" alt="Coffee Bar">
-            </div>
-
-            <div class="info-group">
-                <div class="info-item">
-                    <div class="info-icon">🕒</div>
-                    <div class="info-text">
-                        <h4>Jam Operasional</h4>
-                        <p>Senin - Minggu: 08.00 - 22.00 WIB<br>(Last Order 21.30 WIB)</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">🗺️</div>
-                    <div class="info-text">
-                        <h4>Alamat Lengkap</h4>
-                        <p>Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan</p>
-                    </div>
-                </div>
-
-                <div class="info-item">
-                    <div class="info-icon">📶</div>
-                    <div class="info-text">
-                        <h4>Fasilitas Kafe</h4>
-                        <p>Wi-Fi Kencang, Stopkontak di Setiap Meja, Area Smoking, AC, Musholla</p>
-                    </div>
-                </div>
-            </div>
-
-            <button class="btn-action" style="background-color:#4285F4;" onclick="window.open('https://maps.google.com')">🗺️ Buka Google Maps</button>
+            <p style="margin-bottom: 10px;"><strong>Jam Operasional:</strong> Senin - Minggu (08:00 - 22:00 WIB)</p>
+            <p style="margin-bottom: 15px;"><strong>Alamat:</strong> Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan</p>
+            <button class="btn-action" onclick="window.open('https://maps.google.com')">🗺️ Buka di Google Maps</button>
         </div>
 
-        <!-- TAB 3: GALERI -->
+        <!-- 5. GALERI -->
         <div id="galeri" class="tab-content">
-            <h2 class="section-title">📸 Suasana Kafe</h2>
-            <p style="font-size: 0.88rem; color: #666; margin-bottom: 12px;">Potret sudut favorit dan sajian hangat di Kopi Senja.</p>
-            
+            <h2 class="section-title">📸 Galeri Foto</h2>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=400&q=80" alt="Coffee Brewing">
-                    <span>Manual Brew</span>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80" alt="Indoor Outdoor Area">
-                    <span>Outdoor Area</span>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Latte Art">
-                    <span>Latte Art</span>
-                </div>
-                <div class="gallery-item">
-                    <img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=400&q=80" alt="Working Corner">
-                    <span>Cozy Corner</span>
-                </div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=400&q=80" alt="1"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80" alt="2"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="3"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=400&q=80" alt="4"></div>
             </div>
-
-            <button class="btn-action btn-ig" onclick="window.open('https://instagram.com')">📷 Ikuti Instagram Kami</button>
-        </div>
-
-        <!-- TAB 4: TENTANG KAMI -->
-        <div id="tentang" class="tab-content">
-            <h2 class="section-title">✨ Tentang Kopi Senja</h2>
-            <div class="hero-img-box">
-                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=600&q=80" alt="Beans Roasting">
-            </div>
-            <p style="font-size: 0.92rem; color: #444; margin-bottom: 12px; line-height: 1.7;">
-                <strong>Kopi Senja</strong> berdiri sejak tahun 2022 dengan satu misi: menyajikan kopi lokal berkualitas tinggi dari petani Indonesia dalam suasana yang hangat dan menenangkan.
-            </p>
-            <p style="font-size: 0.92rem; color: #444; line-height: 1.7;">
-                Kami mengesangrai (roasting) biji kopi pilihan sendiri setiap minggu untuk memastikan kesegaran rasa di setiap cangkir yang Anda nikmati.
-            </p>
         </div>
 
     </div>
@@ -419,22 +455,25 @@
         © 2026 Kopi Senja Indonesia. All rights reserved.
     </footer>
 
-    <!-- JavaScript untuk Sistem Tab/Kategori -->
+    <!-- 자바스크립트 모션 및 예약 처리 -->
     <script>
-        function openTab(tabName) {
-            // Sembunyikan semua tab content
+        function openTab(tabName, btnElement) {
             const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => content.classList.remove('active'));
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
 
-            // Nonaktifkan semua tombol nav
             const buttons = document.querySelectorAll('.nav-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
 
-            // Tampilkan tab yang dipilih
-            document.getElementById(tabName).classList.add('active');
+            const selectedTab = document.getElementById(tabName);
+            selectedTab.classList.add('active');
+            btnElement.classList.add('active');
+        }
 
-            // Aktifkan tombol yang diklik
-            event.currentTarget.classList.add('active');
+        function handleReservation(event) {
+            event.preventDefault();
+            alert('Terima kasih! Pesanan reservasi Anda berhasil dikirim.');
         }
     </script>
 </body>
