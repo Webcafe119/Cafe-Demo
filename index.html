@@ -18,13 +18,13 @@
             padding-bottom: 50px;
         }
 
-        /* 1. 상단 메인 카페 비주얼 히어로 섹션 */
+        /* 1. 상단 메인 히어로 슬라이드 (크기 확대) */
         .hero-banner {
             position: relative;
             width: 100%;
-            height: 280px;
+            height: 420px; /* 슬라이드 높이 확대 */
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -34,28 +34,28 @@
             padding: 0 20px;
         }
         .hero-banner h1 {
-            font-size: 2.8rem;
+            font-size: 3.2rem;
             letter-spacing: 3px;
             color: #e2b071;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-            margin-bottom: 8px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+            margin-bottom: 10px;
         }
         .hero-banner p {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: #f0e6d2;
             font-style: italic;
-            max-width: 500px;
+            max-width: 600px;
         }
 
-        /* 2. 고정 탭 메뉴 */
+        /* 2. 상단 고정 탭 메뉴 (Galeri 삭제됨) */
         nav {
             position: sticky;
             top: 0;
             background-color: #2c1d11;
             display: flex;
             justify-content: center;
-            gap: 10px;
-            padding: 12px 15px;
+            gap: 12px;
+            padding: 14px 15px;
             z-index: 100;
             box-shadow: 0 4px 12px rgba(0,0,0,0.25);
             overflow-x: auto;
@@ -64,9 +64,9 @@
             background: transparent;
             border: 1px solid #7a5c43;
             color: #e8d8c8;
-            padding: 8px 18px;
+            padding: 9px 22px;
             border-radius: 25px;
-            font-size: 0.95rem;
+            font-size: 0.98rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -78,19 +78,18 @@
             border-color: #e2b071;
         }
 
-        /* 3. 컨테이너 & 애니메이션 모션 */
+        /* 3. 본문 컨테이너 및 모션 애니메이션 */
         .container {
-            max-width: 700px;
-            margin: 25px auto;
+            max-width: 750px;
+            margin: 30px auto;
             padding: 0 15px;
-            position: relative;
         }
 
         .tab-content {
             display: none;
             background: #ffffff;
             border-radius: 16px;
-            padding: 25px;
+            padding: 28px;
             box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             border: 1px solid #e8decb;
             opacity: 0;
@@ -104,22 +103,22 @@
         }
 
         .section-title {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: #4a3222;
             border-bottom: 2px solid #e2b071;
             padding-bottom: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
             display: flex;
             align-items: center;
             gap: 10px;
         }
 
-        /* 서브 카테고리 (Minuman / Makanan / Dessert) */
+        /* 서브 카테고리 (Minuman / Makanan Utama / Dessert) */
         .sub-category-title {
-            font-size: 1.15rem;
+            font-size: 1.2rem;
             color: #b86b20;
-            margin: 20px 0 12px 0;
-            padding-left: 8px;
+            margin: 25px 0 14px 0;
+            padding-left: 10px;
             border-left: 4px solid #e2b071;
         }
 
@@ -127,21 +126,21 @@
         .menu-grid {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
         .menu-card {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             background: #faf6f0;
             border-radius: 12px;
-            padding: 12px;
+            padding: 12px 14px;
             border: 1px solid #eee4d5;
             align-items: center;
         }
         .menu-thumb {
-            width: 70px;
-            height: 70px;
-            border-radius: 8px;
+            width: 75px;
+            height: 75px;
+            border-radius: 10px;
             object-fit: cover;
             flex-shrink: 0;
         }
@@ -156,7 +155,7 @@
         }
         .menu-name {
             font-weight: bold;
-            font-size: 0.98rem;
+            font-size: 1rem;
             color: #2c1d11;
         }
         .menu-price {
@@ -165,112 +164,75 @@
             font-size: 0.95rem;
         }
         .menu-desc {
-            font-size: 0.82rem;
+            font-size: 0.83rem;
             color: #6e5e52;
         }
 
-        /* 대형 About Us 스타일 */
-        .about-hero {
-            position: relative;
-            height: 220px;
+        /* 대형 About Us 및 내장 갤러리 */
+        .about-hero-img {
+            width: 100%;
+            height: 260px;
             border-radius: 12px;
-            overflow: hidden;
+            object-fit: cover;
             margin-bottom: 20px;
         }
-        .about-hero img {
+        .about-text-long {
+            font-size: 1rem;
+            color: #332720;
+            line-height: 1.85;
+            margin-bottom: 16px;
+        }
+        .about-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin: 25px 0 15px 0;
+        }
+        .about-gallery-item {
+            height: 140px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .about-gallery-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .about-text-big {
-            font-size: 1.05rem;
-            color: #332720;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-        .about-features {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            margin-top: 20px;
-        }
-        .feature-box {
-            background: #faf6f0;
-            padding: 15px;
-            border-radius: 10px;
-            text-align: center;
-            border: 1px solid #eee4d5;
-        }
-        .feature-box h4 {
-            color: #b86b20;
-            margin-bottom: 5px;
-        }
-        .feature-box p {
-            font-size: 0.82rem;
-            color: #666;
-        }
 
-        /* 4. 예약 (Reservasi) 양식 */
+        /* 예약 (Reservasi) 양식 */
         .form-group {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
         .form-group label {
             display: block;
             font-size: 0.9rem;
             font-weight: 600;
             color: #4a3222;
-            margin-bottom: 5px;
+            margin-bottom: 6px;
         }
         .form-group input, .form-group select, .form-group textarea {
             width: 100%;
-            padding: 10px 12px;
+            padding: 11px 13px;
             border: 1px solid #dcd1c4;
             border-radius: 8px;
             font-size: 0.95rem;
             background: #fdfbf7;
         }
-        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
-            outline: none;
-            border-color: #e2b071;
-            background: #ffffff;
-        }
 
-        /* 버튼 및 푸터 */
         .btn-action {
             display: block;
             width: 100%;
             text-align: center;
             background-color: #e2b071;
             color: #2c1d11;
-            padding: 12px;
+            padding: 13px;
             border-radius: 10px;
             text-decoration: none;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 18px;
             border: none;
             cursor: pointer;
             font-size: 1rem;
-            transition: background 0.2s ease;
-        }
-        .btn-action:hover {
-            background-color: #d19f60;
-        }
-
-        /* 갤러리 그리드 */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 10px;
-        }
-        .gallery-item {
-            height: 130px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
         }
 
         footer {
@@ -283,26 +245,25 @@
 </head>
 <body>
 
-    <!-- 상단 대형 카페 메인 비주얼 -->
+    <!-- 크기가 더 커진 메인 히어로 슬라이드 -->
     <header class="hero-banner">
         <h1>Kopi Senja</h1>
         <p>Nikmati Kopi Otentik & Suasana Nyaman di Jakarta Selatan</p>
     </header>
 
-    <!-- 카테고리 탭 (상단 고정) -->
+    <!-- 카테고리 탭 (Galeri 삭제) -->
     <nav>
         <button class="nav-btn active" onclick="openTab('menu', this)">☕ Menu</button>
         <button class="nav-btn" onclick="openTab('about', this)">📖 About Us</button>
         <button class="nav-btn" onclick="openTab('reservasi', this)">📅 Reservasi</button>
         <button class="nav-btn" onclick="openTab('lokasi', this)">📍 Lokasi</button>
-        <button class="nav-btn" onclick="openTab('galeri', this)">📸 Galeri</button>
     </nav>
 
     <div class="container">
 
-        <!-- 1. MENU (Minuman, Makanan, Dessert) -->
+        <!-- 1. MENU (확장된 분류) -->
         <div id="menu" class="tab-content active">
-            <h2 class="section-title">☕ Daftar Menu</h2>
+            <h2 class="section-title">☕ Daftar Menu Complete</h2>
 
             <!-- 음료 (Minuman) -->
             <h3 class="sub-category-title">🥤 Minuman (Beverages)</h3>
@@ -318,7 +279,7 @@
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=200&q=80" alt="Pandan Latte">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=200&q=80" alt="Pandan Velvet Latte">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Pandan Velvet Latte</span>
@@ -327,94 +288,146 @@
                         <p class="menu-desc">Perpaduan aroma pandan wangi, espresso, dan foam lembut.</p>
                     </div>
                 </div>
+                <div class="menu-card">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?auto=format&fit=crop&w=200&q=80" alt="Americano Hot/Ice">
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <span class="menu-name">Americano (Hot / Ice)</span>
+                            <span class="menu-price">Rp 18.000</span>
+                        </div>
+                        <p class="menu-desc">Ekstraksi double shot espresso segar dengan karakter rasa clean.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?auto=format&fit=crop&w=200&q=80" alt="Matcha Green Tea">
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <span class="menu-name">Matcha Green Tea Latte</span>
+                            <span class="menu-price">Rp 26.000</span>
+                        </div>
+                        <p class="menu-desc">Bubuk matcha autentik Jepang dikocok halus bersama susu segar.</p>
+                    </div>
+                </div>
             </div>
 
             <!-- 음식 (Makanan Utama) -->
             <h3 class="sub-category-title">🍳 Makanan Utama (Main Course)</h3>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80" alt="Nasi Goreng">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80" alt="Nasi Goreng Senja">
                     <div class="menu-info">
                         <div class="menu-header">
-                            <span class="menu-name">Nasi Goreng Senja</span>
+                            <span class="menu-name">Nasi Goreng Senja Special</span>
                             <span class="menu-price">Rp 35.000</span>
                         </div>
-                        <p class="menu-desc">Nasi goreng rempah khas dengan telur mata sapi dan kerupuk.</p>
+                        <p class="menu-desc">Nasi goreng rempah khas, sate ayam, telur mata sapi, dan kerupuk.</p>
                     </div>
                 </div>
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=200&q=80" alt="Croissant Sandwich">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=200&q=80" alt="Beef Croissant Sandwich">
                     <div class="menu-info">
                         <div class="menu-header">
                             <span class="menu-name">Beef Croissant Sandwich</span>
                             <span class="menu-price">Rp 38.000</span>
                         </div>
-                        <p class="menu-desc">Croissant renyah dengan isian danging sapi, keju, dan sayuran segar.</p>
+                        <p class="menu-desc">Croissant renyah dengan isian daging sapi, keju melted, dan sayuran.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1621996346565-e3d5d6281288?auto=format&fit=crop&w=200&q=80" alt="Spaghetti Bolognese">
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <span class="menu-name">Spaghetti Bolognese</span>
+                            <span class="menu-price">Rp 36.000</span>
+                        </div>
+                        <p class="menu-desc">Pasta spageti al dente saus daging cincang gurih dengan taburan keju.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 디저트 (Dessert) -->
+            <!-- 디저트 (Dessert & Pastry) -->
             <h3 class="sub-category-title">🍰 Dessert & Pastry</h3>
             <div class="menu-grid">
                 <div class="menu-card">
-                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=200&q=80" alt="Fudgy Brownie">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?auto=format&fit=crop&w=200&q=80" alt="Fudgy Brownies">
                     <div class="menu-info">
                         <div class="menu-header">
-                            <span class="menu-name">Fudgy Brownies</span>
+                            <span class="menu-name">Fudgy Chocolate Brownies</span>
                             <span class="menu-price">Rp 20.000</span>
                         </div>
-                        <p class="menu-desc">Kue cokelat lumer tebal dengan taburan kacang almond.</p>
+                        <p class="menu-desc">Kue cokelat lumer tebal dengan taburan kacang almond renyah.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?auto=format&fit=crop&w=200&q=80" alt="Croissant Butter">
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <span class="menu-name">French Butter Croissant</span>
+                            <span class="menu-price">Rp 18.000</span>
+                        </div>
+                        <p class="menu-desc">Roti croissant beraroma mentega khas Prancis yang renyah di luar.</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img class="menu-thumb" src="https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?auto=format&fit=crop&w=200&q=80" alt="Cheesecake">
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <span class="menu-name">Basque Burnt Cheesecake</span>
+                            <span class="menu-price">Rp 28.000</span>
+                        </div>
+                        <p class="menu-desc">Kue keju panggang creamy dengan tekstur lembut melted di dalam.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- 2. ABOUT US (대형 소개) -->
+        <!-- 2. ABOUT US (상세 긴 글 + 사진 내장) -->
         <div id="about" class="tab-content">
             <h2 class="section-title">📖 Tentang Kopi Senja</h2>
-            <div class="about-hero">
-                <img src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Roasting Beans">
-            </div>
-            <p class="about-text-big">
+            
+            <img class="about-hero-img" src="https://images.unsplash.com/photo-1498804103079-a6351b050096?auto=format&fit=crop&w=800&q=80" alt="Roasting Beans">
+            
+            <p class="about-text-long">
                 <strong>Selamat Datang di Kopi Senja!</strong><br>
-                Kami berdiri sejak tahun 2022 di jantung kota Jakarta Selatan. Berawal dari kecintaan kami terhadap cita rasa kopi Nusantara, Kopi Senja hadir sebagai tempat berkumpul yang hangat bagi para pecinta kopi, pekerja kreatif, dan keluarga.
+                Kopi Senja berdiri sejak tahun 2022 di pusat Jakarta Selatan. Berawal dari kecintaan kami terhadap kekayaan rasa kopi Indonesia, kami berkomitmen menyajikan pengalaman minum kopi terbaik dalam suasana yang hangat, tenang, dan nyaman.
             </p>
-            <p class="about-text-big">
-                Setiap biji kopi kami dipilih langsung dari petani lokal di Aceh Gayo 및 Toraja, lalu disangrai (roast) secara mandiri setiap minggu untuk menjamin kualitas kesegaran terbaik di setiap cangkir.
+            <p class="about-text-long">
+                Kami percaya bahwa secangkir kopi berkualitas dimulai dari biji kopi pilihan. Biji kopi kami didapatkan langsung dari para petani lokal di wilayah Aceh Gayo, Toraja, hingga Kintamani. Setiap minggunya, kami melakukan proses pengasangraian (roasting) secara mandiri untuk menjaga tingkat kesegaran dan cita rasa otentik Nusantara.
             </p>
-            <div class="about-features">
-                <div class="feature-box">
-                    <h4>🌱 100% Kopi Lokal</h4>
-                    <p>Biji kopi pilihan langsung dari petani Indonesia.</p>
-                </div>
-                <div class="feature-box">
-                    <h4>💻 Work Friendly</h4>
-                    <p>Wi-Fi cepat & stopkontak di setiap sudut meja.</p>
-                </div>
+
+            <!-- About Us 내부 전용 갤러리 사진 -->
+            <div class="about-gallery">
+                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=400&q=80" alt="Manual Brew"></div>
+                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80" alt="Outdoor Area"></div>
+                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="Latte Art"></div>
+                <div class="about-gallery-item"><img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=400&q=80" alt="Cozy Corner"></div>
             </div>
+
+            <p class="about-text-long">
+                Tidak hanya sekadar tempat minum kopi, Kopi Senja dirancang sebagai ruang kreatif bagi siapapun. Baik Anda yang ingin bekerja santai, mengadakan rapat bisnis, berkumpul bersama sahabat, maupun menikmati momen sendiri di sore hari.
+            </p>
         </div>
 
-        <!-- 3. RESERVASI (예약 양식) -->
+        <!-- 3. RESERVASI -->
         <div id="reservasi" class="tab-content">
             <h2 class="section-title">📅 Reservasi Meja</h2>
-            <p style="font-size: 0.88rem; color: #666; margin-bottom: 15px;">Pesan meja Anda terlebih dahulu untuk acara santai, rapat, atau kumpul keluarga.</p>
+            <p style="font-size: 0.88rem; color: #666; margin-bottom: 15px;">Pesan meja Anda terlebih dahulu untuk kumpul keluarga atau acara spesial.</p>
 
             <form onsubmit="handleReservation(event)">
                 <div class="form-group">
-                    <label>Nama Lengkap (이름)</label>
+                    <label>Nama Lengkap</label>
                     <input type="text" placeholder="Masukkan nama Anda" required>
                 </div>
                 <div class="form-group">
-                    <label>Nomor WhatsApp (전화번호)</label>
+                    <label>Nomor WhatsApp</label>
                     <input type="tel" placeholder="0812xxxxxxx" required>
                 </div>
                 <div class="form-group">
-                    <label>Tanggal & Jam (날짜 및 시간)</label>
+                    <label>Tanggal & Jam</label>
                     <input type="datetime-local" required>
                 </div>
                 <div class="form-group">
-                    <label>Jumlah Orang (인원수)</label>
+                    <label>Jumlah Orang</label>
                     <select required>
                         <option value="1">1 Orang</option>
                         <option value="2">2 Orang</option>
@@ -423,7 +436,7 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Catatan Khusus (요청사항)</label>
+                    <label>Catatan Khusus</label>
                     <textarea rows="3" placeholder="Pesan khusus (misal: area outdoor, ulang tahun, dll)"></textarea>
                 </div>
                 <button type="submit" class="btn-action">Kirim Reservasi via WhatsApp</button>
@@ -436,17 +449,6 @@
             <p style="margin-bottom: 10px;"><strong>Jam Operasional:</strong> Senin - Minggu (08:00 - 22:00 WIB)</p>
             <p style="margin-bottom: 15px;"><strong>Alamat:</strong> Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan</p>
             <button class="btn-action" onclick="window.open('https://maps.google.com')">🗺️ Buka di Google Maps</button>
-        </div>
-
-        <!-- 5. GALERI -->
-        <div id="galeri" class="tab-content">
-            <h2 class="section-title">📸 Galeri Foto</h2>
-            <div class="gallery-grid">
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=400&q=80" alt="1"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=400&q=80" alt="2"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=400&q=80" alt="3"></div>
-                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1463797221720-6b07e6426c24?auto=format&fit=crop&w=400&q=80" alt="4"></div>
-            </div>
         </div>
 
     </div>
