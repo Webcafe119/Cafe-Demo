@@ -122,7 +122,7 @@
             border-left: 4px solid #e2b071;
         }
 
-        /* 메뉴 리스트 카드 */
+        /* 메뉴 리스트 카드 & 베스트 태그 */
         .menu-grid {
             display: flex;
             flex-direction: column;
@@ -136,6 +136,7 @@
             padding: 12px 14px;
             border: 1px solid #eee4d5;
             align-items: center;
+            position: relative;
         }
         .menu-thumb {
             width: 75px;
@@ -157,6 +158,25 @@
             font-weight: bold;
             font-size: 1rem;
             color: #2c1d11;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .badge-best {
+            background-color: #e2b071;
+            color: #2c1d11;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .badge-chef {
+            background-color: #b86b20;
+            color: #ffffff;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
         }
         .menu-price {
             font-weight: bold;
@@ -198,6 +218,45 @@
             height: 100%;
             object-fit: cover;
         }
+
+        /* 편의시설 Grid */
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 15px;
+        }
+        .facility-card {
+            background: #faf6f0;
+            border: 1px solid #eee4d5;
+            padding: 12px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #4a3222;
+        }
+
+        /* 소셜 미디어 버튼 */
+        .social-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .btn-social {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #fff;
+        }
+        .btn-ig { background-color: #e1306c; }
+        .btn-tiktok { background-color: #000000; }
 
         /* 예약 양식 */
         .form-group {
@@ -245,7 +304,7 @@
 </head>
 <body>
 
-    <!-- 크기가 더 커진 메인 히어로 슬라이드 -->
+    <!-- 메인 히어로 슬라이드 -->
     <header class="hero-banner">
         <h1>Kopi Senja</h1>
         <p>Nikmati Kopi Otentik & Suasana Nyaman di Jakarta Selatan</p>
@@ -256,23 +315,23 @@
         <button class="nav-btn active" onclick="openTab('menu', this)">☕ Menu</button>
         <button class="nav-btn" onclick="openTab('about', this)">📖 About Us</button>
         <button class="nav-btn" onclick="openTab('reservasi', this)">📅 Reservasi</button>
-        <button class="nav-btn" onclick="openTab('lokasi', this)">📍 Lokasi</button>
+        <button class="nav-btn" onclick="openTab('lokasi', this)">📍 Lokasi & Fasilitas</button>
     </nav>
 
     <div class="container">
 
-        <!-- 1. MENU -->
+        <!-- 1. MENU (인기 메뉴 태그 추가) -->
         <div id="menu" class="tab-content active">
             <h2 class="section-title">☕ Daftar Menu Complete</h2>
 
-            <!-- 음료 (Minuman) -->
+            <!-- 음료 -->
             <h3 class="sub-category-title">🥤 Minuman (Beverages)</h3>
             <div class="menu-grid">
                 <div class="menu-card">
                     <img class="menu-thumb" src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=200&q=80" alt="Es Kopi Senja">
                     <div class="menu-info">
                         <div class="menu-header">
-                            <span class="menu-name">Es Kopi Senja</span>
+                            <span class="menu-name">Es Kopi Senja <span class="badge-best">BEST</span></span>
                             <span class="menu-price">Rp 22.000</span>
                         </div>
                         <p class="menu-desc">Espresso khas, susu segar, dan gula aren asli yang manis gurih.</p>
@@ -282,7 +341,7 @@
                     <img class="menu-thumb" src="https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=200&q=80" alt="Pandan Velvet Latte">
                     <div class="menu-info">
                         <div class="menu-header">
-                            <span class="menu-name">Pandan Velvet Latte</span>
+                            <span class="menu-name">Pandan Velvet Latte <span class="badge-chef">RECOMMENDED</span></span>
                             <span class="menu-price">Rp 25.000</span>
                         </div>
                         <p class="menu-desc">Perpaduan aroma pandan wangi, espresso, dan foam lembut.</p>
@@ -310,14 +369,14 @@
                 </div>
             </div>
 
-            <!-- 음식 (Makanan Utama) -->
+            <!-- 음식 -->
             <h3 class="sub-category-title">🍳 Makanan Utama (Main Course)</h3>
             <div class="menu-grid">
                 <div class="menu-card">
                     <img class="menu-thumb" src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=200&q=80" alt="Nasi Goreng Senja">
                     <div class="menu-info">
                         <div class="menu-header">
-                            <span class="menu-name">Nasi Goreng Senja Special</span>
+                            <span class="menu-name">Nasi Goreng Senja <span class="badge-best">BEST</span></span>
                             <span class="menu-price">Rp 35.000</span>
                         </div>
                         <p class="menu-desc">Nasi goreng rempah khas, sate ayam, telur mata sapi, dan kerupuk.</p>
@@ -345,7 +404,7 @@
                 </div>
             </div>
 
-            <!-- 디저트 (Dessert & Pastry) -->
+            <!-- 디저트 -->
             <h3 class="sub-category-title">🍰 Dessert & Pastry</h3>
             <div class="menu-grid">
                 <div class="menu-card">
@@ -372,7 +431,7 @@
                     <img class="menu-thumb" src="https://images.unsplash.com/photo-1528975604071-b4dc52a2d18c?auto=format&fit=crop&w=200&q=80" alt="Cheesecake">
                     <div class="menu-info">
                         <div class="menu-header">
-                            <span class="menu-name">Basque Burnt Cheesecake</span>
+                            <span class="menu-name">Basque Burnt Cheesecake <span class="badge-chef">RECOMMENDED</span></span>
                             <span class="menu-price">Rp 28.000</span>
                         </div>
                         <p class="menu-desc">Kue keju panggang creamy dengan tekstur lembut melted di dalam.</p>
@@ -442,12 +501,30 @@
             </form>
         </div>
 
-        <!-- 4. LOKASI -->
+        <!-- 4. LOKASI, 편의시설 & 소셜 미디어 -->
         <div id="lokasi" class="tab-content">
-            <h2 class="section-title">📍 Lokasi & Jam Buka</h2>
+            <h2 class="section-title">📍 Lokasi & Informasi</h2>
             <p style="margin-bottom: 10px;"><strong>Jam Operasional:</strong> Senin - Minggu (08:00 - 22:00 WIB)</p>
             <p style="margin-bottom: 15px;"><strong>Alamat:</strong> Jl. Senopati No. 45, Kebayoran Baru, Jakarta Selatan</p>
-            <button class="btn-action" onclick="window.open('https://maps.google.com')">🗺️ Buka di Google Maps</button>
+            <button class="btn-action" style="margin-top:0;" onclick="window.open('https://maps.google.com')">🗺️ Buka di Google Maps</button>
+
+            <!-- 편의시설 아이콘 안내 -->
+            <h3 class="sub-category-title">✨ Fasilitas Kafe</h3>
+            <div class="facility-grid">
+                <div class="facility-card">📶 Wi-Fi Cepat (100Mbps)</div>
+                <div class="facility-card">🔌 Stopkontak Banyak</div>
+                <div class="facility-card">🅿️ Area Parkir Luas</div>
+                <div class="facility-card">🐾 Pet-Friendly Area</div>
+                <div class="facility-card">❄️ Ruangan Ber-AC</div>
+                <div class="facility-card">🚬 Smoking Area Outdoor</div>
+            </div>
+
+            <!-- 소셜 미디어 연동 -->
+            <h3 class="sub-category-title">📱 Ikuti Kami</h3>
+            <div class="social-links">
+                <a href="https://instagram.com" target="_blank" class="btn-social btn-ig">📸 Instagram</a>
+                <a href="https://tiktok.com" target="_blank" class="btn-social btn-tiktok">🎵 TikTok</a>
+            </div>
         </div>
 
     </div>
@@ -456,7 +533,7 @@
         © 2026 Kopi Senja Indonesia. All rights reserved.
     </footer>
 
-    <!-- 자바스크립트 탭 전환 및 WhatsApp 직접 연동 -->
+    <!-- 자바스크립트 -->
     <script>
         function openTab(tabName, btnElement) {
             const contents = document.querySelectorAll('.tab-content');
@@ -475,7 +552,6 @@
         function handleReservation(event) {
             event.preventDefault();
             
-            // 지정해주신 WhatsApp 번호
             const phoneNumber = "6281110002141"; 
 
             const inputs = event.target.querySelectorAll('input, select, textarea');
@@ -485,7 +561,6 @@
             const jumlah = inputs[3].value;
             const catatan = inputs[4].value || "Tidak ada";
 
-            // WhatsApp으로 전달할 자동 메시지 내용
             const message = `*[Reservasi Meja Baru - Kopi Senja]*\n\n` +
                             `• *Nama:* ${nama}\n` +
                             `• *No. WA:* ${wa}\n` +
@@ -493,8 +568,9 @@
                             `• *Jumlah Orang:* ${jumlah}\n` +
                             `• *Catatan:* ${catatan}`;
 
-            const waUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
-            window.open(waUrl, '_blank');
+            // wa.me 링크를 이용해 바로 이동 (팝업 차단 문제 완벽 해결)
+            const waUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.location.href = waUrl;
         }
     </script>
 </body>
